@@ -14,6 +14,6 @@ namespace CSharpProjectEulerForm
 
         int LargestPalindrome();
 
-        int SmallestEvenlyDivisibleNum(int fromNumber, int toNumber);
+        long SmallestEvenlyDivisibleNum(int fromNumber, int toNumber);
     }
 }

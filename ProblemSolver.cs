@@ -82,21 +82,41 @@ namespace CSharpProjectEulerForm
             return palindrome;
         }
 
-        public int SmallestEvenlyDivisibleNum(int fromNumber, int toNumber)
+        public long SmallestEvenlyDivisibleNum(int fromNumber, int toNumber)
         {
-            List<int> primeNumbers = new List<int>();
+            List<long> numbers = new List<long>();
 
             for(int i = fromNumber; i <= toNumber; i++)
             {
-                if(_func.isPrime(i))
-                    primeNumbers.Add(i);
+                if (_func.isPrime(i))
+                {
+                    numbers.Add(i);
+                }
+                else
+                {
+                    for(int j = 2; j<i; j++)
+                    {
+                        if(_func.isPrime(j) && i%j == 0)
+                        {
+                            int temp = 1;
+                            while (i%j == 0)
+                            {
+                                temp *= j;
+                                i /= j;
+                            }
+                            numbers.Add(temp);
+                            System.Windows.Forms.MessageBox.Show(temp.ToString());
+                        }
+                    }
+                }
             }
 
-            int returnNum = 1;
+            long returnNum = 1;
 
-            foreach(var i in primeNumbers)
+            foreach(var i in numbers)
             {
                 returnNum *= i;
+                System.Windows.Forms.MessageBox.Show(i.ToString());
             }
 
             return returnNum;

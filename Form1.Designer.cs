@@ -49,13 +49,14 @@
             this.button6 = new System.Windows.Forms.Button();
             this.btnProblem_1 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.txtSoru = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtSonuc
             // 
-            this.txtSonuc.Location = new System.Drawing.Point(161, 27);
+            this.txtSonuc.Location = new System.Drawing.Point(240, 145);
             this.txtSonuc.Name = "txtSonuc";
             this.txtSonuc.ReadOnly = true;
             this.txtSonuc.Size = new System.Drawing.Size(181, 23);
@@ -63,7 +64,7 @@
             // 
             // txtSure
             // 
-            this.txtSure.Location = new System.Drawing.Point(608, 27);
+            this.txtSure.Location = new System.Drawing.Point(687, 145);
             this.txtSure.Name = "txtSure";
             this.txtSure.ReadOnly = true;
             this.txtSure.Size = new System.Drawing.Size(170, 23);
@@ -72,7 +73,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(96, 30);
+            this.label1.Location = new System.Drawing.Point(175, 148);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 15);
             this.label1.TabIndex = 2;
@@ -81,7 +82,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(506, 30);
+            this.label2.Location = new System.Drawing.Point(585, 148);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 15);
             this.label2.TabIndex = 3;
@@ -90,10 +91,10 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(12, 78);
+            this.tabControl1.Location = new System.Drawing.Point(12, 177);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1104, 567);
+            this.tabControl1.Size = new System.Drawing.Size(1104, 468);
             this.tabControl1.TabIndex = 4;
             // 
             // tabPage1
@@ -116,7 +117,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1096, 539);
+            this.tabPage1.Size = new System.Drawing.Size(1096, 440);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "1-50";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -271,11 +272,23 @@
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // txtSoru
+            // 
+            this.txtSoru.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtSoru.Location = new System.Drawing.Point(12, 7);
+            this.txtSoru.Multiline = true;
+            this.txtSoru.Name = "txtSoru";
+            this.txtSoru.ReadOnly = true;
+            this.txtSoru.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtSoru.Size = new System.Drawing.Size(1104, 132);
+            this.txtSoru.TabIndex = 5;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1198, 657);
+            this.ClientSize = new System.Drawing.Size(1132, 657);
+            this.Controls.Add(this.txtSoru);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -313,5 +326,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button btnProblem_1;
+        private System.Windows.Forms.TextBox txtSoru;
     }
 }
