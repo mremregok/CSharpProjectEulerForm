@@ -150,6 +150,7 @@
             this.btnProblem_4.TabIndex = 0;
             this.btnProblem_4.Text = "4";
             this.btnProblem_4.UseVisualStyleBackColor = true;
+            this.btnProblem_4.Click += new System.EventHandler(this.btnProblem_4_Click);
             // 
             // btnProblem_6
             // 
@@ -230,6 +231,7 @@
             this.btnProblem_5.TabIndex = 0;
             this.btnProblem_5.Text = "5";
             this.btnProblem_5.UseVisualStyleBackColor = true;
+            this.btnProblem_5.Click += new System.EventHandler(this.btnProblem_5_Click);
             // 
             // button3
             // 

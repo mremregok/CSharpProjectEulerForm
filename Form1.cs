@@ -17,57 +17,87 @@ namespace CSharpProjectEulerForm
             InitializeComponent();
         }
 
-        private void btnProblem_1_Click(object sender, EventArgs e)
+        IProblem prob = new ProblemSolver();
+
+        DateTime StartDate;
+
+        DateTime EndDate;
+
+        public void FuncCaller(Func<long, long> func, long num)
         {
-            var stopWatch = new System.Diagnostics.Stopwatch();
+            StartDate = DateTime.Now;
 
-            ProblemSolver prob = new ProblemSolver();
+            var answer = func(num);
 
-            stopWatch.Start();
-
-            var answer = prob.SumOfMultiples(1000);
-
-            stopWatch.Stop();
+            EndDate = DateTime.Now;
 
             txtSonuc.Text = answer.ToString();
 
-            txtSure.Text = stopWatch.ElapsedMilliseconds.ToString() + " milisaniye";
+            txtSure.Text = ((int)(EndDate-StartDate).TotalMilliseconds).ToString() + " miliseconds";
+        }
+
+        public void FuncCaller(Func<int, int> func, int num)
+        {
+            StartDate = DateTime.Now;
+
+            var answer = func(num);
+
+            EndDate = DateTime.Now;
+
+            txtSonuc.Text = answer.ToString();
+
+            txtSure.Text = ((int)(EndDate - StartDate).TotalMilliseconds).ToString() + " miliseconds";
+        }
+
+        public void FuncCaller(Func<int> func)
+        {
+            StartDate = DateTime.Now;
+
+            var answer = func();
+
+            EndDate = DateTime.Now;
+
+            txtSonuc.Text = answer.ToString();
+
+            txtSure.Text = ((int)(EndDate - StartDate).TotalMilliseconds).ToString() + " miliseconds";
+        }
+
+        public void FuncCaller(Func<int, int, int> func, int start, int end)
+        {
+            StartDate = DateTime.Now;
+
+            var answer = func(start, end);
+
+            EndDate = DateTime.Now;
+
+            txtSonuc.Text = answer.ToString();
+
+            txtSure.Text = ((int)(EndDate - StartDate).TotalMilliseconds).ToString() + " miliseconds";
+        }
+
+        private void btnProblem_1_Click(object sender, EventArgs e)
+        {
+            FuncCaller(prob.SumOfMultiples, 1000);
         }
 
         private void btnProblem_2_Click(object sender, EventArgs e)
         {
-            var stopWatch = new System.Diagnostics.Stopwatch();
-
-            ProblemSolver prob = new ProblemSolver();
-
-            stopWatch.Start();
-
-            var answer = prob.SumOfEvenNumbersInFibonacci(4000000);
-
-            stopWatch.Stop();
-
-            txtSonuc.Text = answer.ToString();
-
-            txtSure.Text = stopWatch.ElapsedMilliseconds.ToString() + " milisaniye";
+            FuncCaller(prob.SumOfEvenNumbersInFibonacci, 4000000);
         }
 
         private void btnProblem_3_Click(object sender, EventArgs e)
         {
-            var stopWatch = new System.Diagnostics.Stopwatch();
+            FuncCaller(prob.LargestPrimeFactor, 600851475143);
+        }
 
-            ProblemSolver prob = new ProblemSolver();
+        private void btnProblem_4_Click(object sender, EventArgs e)
+        {
+            FuncCaller(prob.LargestPalindrome);
+        }
 
-            stopWatch.Start();
-
-            var answer = prob.LargestPrimeFactor(600851475143);
-
-            stopWatch.Stop();
-
-            txtSonuc.Text = answer.ToString();
-
-            txtSure.Text = stopWatch.ElapsedMilliseconds.ToString() + " milisaniye";
-
-            
+        private void btnProblem_5_Click(object sender, EventArgs e)
+        {
+            FuncCaller(prob.SmallestEvenlyDivisibleNum, 1, 20);
         }
     }
 }
