@@ -151,5 +151,72 @@ namespace CSharpProjectEulerForm
 
             return prime;
         }
+
+        public long LargestProductInASeries(string serie, int number)
+        {
+            long maxNum = 0;
+            string maxStr = "";
+
+            for(int i = 0; i <= serie.Length-number; i++)
+            {
+                string str = serie.Substring(i, number);
+
+                if(_func.ProductOfAdjacentNumber(str) > maxNum)
+                {
+                    maxNum = _func.ProductOfAdjacentNumber(str);
+                    maxStr = str;
+                }
+            }
+
+            long product = 1;
+
+            foreach(var i in maxStr)
+                product *= (i-48);
+
+            return product;
+        }
+
+        public long SpecialPythagoreanTriplet(int number)
+        {
+            int a = 0, b = 0, c = 0;
+
+            bool found = false;
+
+            for(a = 0; a < number/3; a++)
+            {
+                for(b = 0; b < number/2; b++)
+                {
+                    c = number - a - b;
+
+                    if(a*a+b*b == c * c)
+                    {
+                        found = true;
+                        break;
+                    }
+                }
+
+                if (found)
+                    break;
+            }
+            if (!found)
+                return 0;
+            return a * b * c;
+        }
+
+        public long SumOfPrimeNumbersToLimit(long limit)
+        {
+            if (limit == 2)
+                return 2;
+
+            int sum = 2;
+
+            for (int i = 3; i < limit; i += 2)
+            {
+                if (_func.isPrime(i))
+                    sum += i;
+            }
+
+            return sum;
+        }
     }
 }

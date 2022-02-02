@@ -13,5 +13,6 @@ namespace CSharpProjectEulerForm
         bool isEven(int num);
 
         List<int> FindFactors(int num);
+        long ProductOfAdjacentNumber(string num);
     }
 }

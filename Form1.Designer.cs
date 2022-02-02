@@ -131,6 +131,7 @@
             this.btnProblem_10.TabIndex = 0;
             this.btnProblem_10.Text = "10";
             this.btnProblem_10.UseVisualStyleBackColor = true;
+            this.btnProblem_10.Click += new System.EventHandler(this.btnProblem_10_Click);
             // 
             // btnProblem_8
             // 
@@ -141,6 +142,7 @@
             this.btnProblem_8.TabIndex = 0;
             this.btnProblem_8.Text = "8";
             this.btnProblem_8.UseVisualStyleBackColor = true;
+            this.btnProblem_8.Click += new System.EventHandler(this.btnProblem_8_Click);
             // 
             // btnProblem_4
             // 
@@ -173,6 +175,7 @@
             this.btnProblem_9.TabIndex = 0;
             this.btnProblem_9.Text = "9";
             this.btnProblem_9.UseVisualStyleBackColor = true;
+            this.btnProblem_9.Click += new System.EventHandler(this.btnProblem_9_Click);
             // 
             // btnProblem_7
             // 

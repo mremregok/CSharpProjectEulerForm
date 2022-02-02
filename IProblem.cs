@@ -19,5 +19,11 @@ namespace CSharpProjectEulerForm
         long SumSquareDifference(long number);
 
         long FindPrimeNumber(int number);
+
+        long LargestProductInASeries(string serie, int number);
+
+        long SpecialPythagoreanTriplet(int number);
+
+        long SumOfPrimeNumbersToLimit(long limit);
     }
 }

@@ -73,5 +73,15 @@ namespace CSharpProjectEulerForm
             }
             return true;
         }
+
+        public long ProductOfAdjacentNumber(string num)
+        {
+            long product = 1;
+
+            foreach (var i in num)
+                product *= (i-48);
+
+            return product;
+        }
     }
 }
