@@ -15,5 +15,9 @@ namespace CSharpProjectEulerForm
         int LargestPalindrome();
 
         long SmallestEvenlyDivisibleNum(int fromNumber, int toNumber);
+
+        long SumSquareDifference(long number);
+
+        long FindPrimeNumber(int number);
     }
 }

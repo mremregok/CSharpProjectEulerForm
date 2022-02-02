@@ -162,6 +162,7 @@
             this.btnProblem_6.TabIndex = 0;
             this.btnProblem_6.Text = "6";
             this.btnProblem_6.UseVisualStyleBackColor = true;
+            this.btnProblem_6.Click += new System.EventHandler(this.btnProblem_6_Click);
             // 
             // btnProblem_9
             // 
@@ -182,6 +183,7 @@
             this.btnProblem_7.TabIndex = 0;
             this.btnProblem_7.Text = "7";
             this.btnProblem_7.UseVisualStyleBackColor = true;
+            this.btnProblem_7.Click += new System.EventHandler(this.btnProblem_7_Click);
             // 
             // button12
             // 

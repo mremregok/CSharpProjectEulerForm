@@ -61,19 +61,12 @@ namespace CSharpProjectEulerForm
             return false;
         }
 
-        public bool isPrime(int num)
-        {
-            for(int i = 2; i < num; i++)
-            {
-                if (num % i == 0)
-                    return false;
-            }
-            return true;
-        }
-
         public bool isPrime(long num)
         {
-            for (long i = 2; i < num; i++)
+            if (num < 2)
+                return false;
+
+            for (long i = 2; i * i <= num; i++)
             {
                 if (num % i == 0)
                     return false;

@@ -111,5 +111,45 @@ namespace CSharpProjectEulerForm
 
             return returnNum;
         }
+
+        public long SumSquareDifference(long number)
+        {
+            long sumOfSquares = 0;
+
+            long squareOfSum = 0;
+
+            for (int i = 1; i <= number; i++)
+            {
+                sumOfSquares += i * i;
+
+                squareOfSum += i;
+            }
+
+            squareOfSum *= squareOfSum;
+
+            return squareOfSum - sumOfSquares;
+        }
+
+        public long FindPrimeNumber(int number)
+        {
+            if (number < 2)
+                return 2;
+
+            int count = 0, iter = 3;
+
+            long prime = 0;
+
+            while(count < number)
+            {
+                if (_func.isPrime(iter))
+                {
+                    prime = iter;
+                    count++;
+                }
+                iter+=2;
+            }
+
+            return prime;
+        }
     }
 }

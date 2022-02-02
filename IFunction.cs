@@ -8,8 +8,6 @@ namespace CSharpProjectEulerForm
     {
         bool isPalindrome(int firstNum, int secondNum);
 
-        bool isPrime(int num);
-
         bool isPrime(long num);
 
         bool isEven(int num);

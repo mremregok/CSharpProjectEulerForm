@@ -36,6 +36,19 @@ namespace CSharpProjectEulerForm
             txtSure.Text = ((int)(EndDate-StartDate).TotalMilliseconds).ToString() + " miliseconds";
         }
 
+        public void FuncCaller(Func<int, long> func, int num)
+        {
+            StartDate = DateTime.Now;
+
+            var answer = func(num);
+
+            EndDate = DateTime.Now;
+
+            txtSonuc.Text = answer.ToString();
+
+            txtSure.Text = ((int)(EndDate - StartDate).TotalMilliseconds).ToString() + " miliseconds";
+        }
+
         public void FuncCaller(Func<int, int> func, int num)
         {
             StartDate = DateTime.Now;
@@ -115,6 +128,29 @@ namespace CSharpProjectEulerForm
                 + Environment.NewLine
                 + "What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?";
             FuncCaller(prob.SmallestEvenlyDivisibleNum, 1, 20);
+        }
+
+        private void btnProblem_6_Click(object sender, EventArgs e)
+        {
+            txtSoru.Text = "The sum of the squares of the first ten natural numbers is,"
+                + Environment.NewLine
+                + "1^2 + 2^2 + ... + 10^2 = 385"
+                + Environment.NewLine
+                + "The square of the sum of the first ten natural numbers is,"
+                + "(1 + 2 + ... + 10)^2 = 55^2 = 3025"
+                + Environment.NewLine
+                + "Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is 3025 - 385 = 2640."
+                + Environment.NewLine
+                + "Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.";
+            FuncCaller(prob.SumSquareDifference, (long)100);
+        }
+
+        private void btnProblem_7_Click(object sender, EventArgs e)
+        {
+            txtSoru.Text = "By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13."
+                + Environment.NewLine
+                + "What is the 10 001st prime number?";
+            FuncCaller(prob.FindPrimeNumber, 1000001);
         }
     }
 }
