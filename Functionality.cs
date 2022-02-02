@@ -6,6 +6,26 @@ namespace CSharpProjectEulerForm
 {
     public class Functionality : IFunction
     {
+        public List<int> FindFactors(int num)
+        {
+            List<int> result = new List<int>();
+            for(int i = 2; i < num; i++)
+            {
+                if(num%i == 0 && isPrime(i))
+                {
+                    int tempNum = num;
+                    while(tempNum % i == 0)
+                    {
+                        result.Add(i);
+                        tempNum /= i;
+                    }
+                        
+                }
+                    
+            }
+            return result;
+        }
+
         public bool isEven(int num)
         {
             if (num % 2 == 0)

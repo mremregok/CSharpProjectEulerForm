@@ -84,39 +84,29 @@ namespace CSharpProjectEulerForm
 
         public long SmallestEvenlyDivisibleNum(int fromNumber, int toNumber)
         {
-            List<long> numbers = new List<long>();
+            long returnNum = 1;
+
 
             for(int i = fromNumber; i <= toNumber; i++)
             {
                 if (_func.isPrime(i))
                 {
-                    numbers.Add(i);
+                    returnNum *= i;
                 }
                 else
                 {
-                    for(int j = 2; j<i; j++)
+                    if(returnNum%i != 0)
                     {
-                        if(_func.isPrime(j) && i%j == 0)
+                        var factorList = _func.FindFactors(i);
+
+                        foreach(var factor in factorList)
                         {
-                            int temp = 1;
-                            while (i%j == 0)
-                            {
-                                temp *= j;
-                                i /= j;
-                            }
-                            numbers.Add(temp);
-                            System.Windows.Forms.MessageBox.Show(temp.ToString());
+                            returnNum *= factor;
+                            if (returnNum % i == 0)
+                                break;
                         }
                     }
                 }
-            }
-
-            long returnNum = 1;
-
-            foreach(var i in numbers)
-            {
-                returnNum *= i;
-                System.Windows.Forms.MessageBox.Show(i.ToString());
             }
 
             return returnNum;

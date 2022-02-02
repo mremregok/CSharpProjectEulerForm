@@ -13,5 +13,7 @@ namespace CSharpProjectEulerForm
         bool isPrime(long num);
 
         bool isEven(int num);
+
+        List<int> FindFactors(int num);
     }
 }
